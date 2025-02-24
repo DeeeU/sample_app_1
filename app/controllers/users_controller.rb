@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       reset_session
       login_in @user
+      remember @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user
     else
